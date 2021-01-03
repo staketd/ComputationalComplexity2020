@@ -10,12 +10,19 @@ class Graph {
 public:
     explicit Graph(size_t size);
 
-    Weight GetWeight(Edge e);
-    void AddEdge(Edge e, Weight weight);
+    Weight GetWeight(Edge e) const;
+    void AddEdge(const Edge& e, Weight weight);
 
-    EdgeSet& GetAdjacentEdges(size_t vertex);
+    const EdgeSet& GetAdjacentEdges(size_t vertex) const;
+    size_t Size() const;
+
+    std::vector<std::vector<size_t>> GetComponents() const;
+    std::vector<size_t> GetComponent(size_t vertex) const;
 
 private:
+    void ComponentDfs(size_t v, std::vector<int>& used, std::vector<size_t>& components) const;
+private:
+    size_t size_;
     std::unordered_map<Edge, Weight> edges_weights_;
     std::vector<EdgeSet> adjacent_edges_;
 };

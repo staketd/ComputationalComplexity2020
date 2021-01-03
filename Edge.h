@@ -2,12 +2,12 @@
 
 class Edge {
 public:
-    Edge getReversed() {
+    Edge GetReversed() const {
         return {to, from};
     }
 
     bool operator==(const Edge& edge) const {
-        return from == edge.from && to == edge.to;
+        return from == edge.from && to == edge.to || from == edge.to && to == edge.from;
     }
 
 public:
