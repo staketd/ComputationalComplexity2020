@@ -9,9 +9,9 @@
 #include <edge_set_generator/main_edge_set_generator.h>
 
 template<typename EdgeSetGenerator>
-class TLSApproximation {
+class TSPApproximation {
 public:
-    explicit TLSApproximation(Graph graph) : size_(graph.Size()), depleted_graph_(graph.Size()),
+    explicit TSPApproximation(Graph graph) : size_(graph.Size()), depleted_graph_(graph.Size()),
                                              main_graph_(std::move(graph)) {
         for (size_t i = 0; i < size_; ++i) {
             for (const auto& edge : main_graph_.GetAdjacentEdges(i)) {

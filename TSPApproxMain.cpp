@@ -1,9 +1,9 @@
-#include <tls_approximation/TLSApproximation.h>
+#include <tsp_approximation/TSPApproximation.h>
 
 int main() {
     auto main_graph = Common::ReadAndInitGraph();
-    TLSApproximation<MainEdgeSetGenerator> tls(main_graph);
-    auto ans = tls.getSolution();
+    TSPApproximation<MainEdgeSetGenerator> tsp(main_graph);
+    auto ans = tsp.getSolution();
     std::cout << ans.weight << "\n";
     for (auto v : ans.cycle) {
         std::cout << v << " ";

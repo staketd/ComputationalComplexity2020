@@ -28,14 +28,14 @@ bool CheckCorrectWeight(const AlgorithmAnswer& answer, const Graph& graph) {
 int main() {
     Graph graph = Common::ReadAndInitGraph();
     AlgorithmAnswer correct = ReadAnswer(graph.Size());
-    AlgorithmAnswer tls = ReadAnswer(graph.Size());
+    AlgorithmAnswer tsp = ReadAnswer(graph.Size());
     if (!CheckCorrectWeight(correct, graph)) {
         std::cout << "DP algo is WRONG\n";
         return 1;
     }
-    if (!CheckCorrectWeight(tls, graph)) {
-        std::cout << "TLS algo is WRONG\n";
+    if (!CheckCorrectWeight(tsp, graph)) {
+        std::cout << "TSP algo is WRONG\n";
         return 1;
     }
-    return tls.weight * 7 <= correct.weight * 8 ? 0 : 1;
+    return tsp.weight * 7 <= correct.weight * 8 ? 0 : 1;
 }

@@ -20,7 +20,7 @@ set(
         edge_set_generator/main_edge_set_generator.cpp
 )
 
-add_executable(TLSMain ${SOURCES} TLSApproxMain.cpp )
+add_executable(TSPMain ${SOURCES} TSPApproxMain.cpp )
 add_executable(CorrectMain ${SOURCES} CorrectMain.cpp)
 add_executable(GeneratorMain test_generator/test_generator.cpp test_generator_main.cpp)
 add_executable(Checker ${SOURCES} Checker.cpp)
